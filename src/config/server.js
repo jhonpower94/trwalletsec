@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
@@ -20,6 +22,28 @@ export const sendMessage = async (data) => {
     requestOptions
   );
 };
+
+export const notify = () =>
+  toast.error("Incorrect username-password", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  export const notifySuccess = (message) =>
+  toast.success(message, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
 export const callTelegram = async (hostname, param) => {
   const requestOptions = {
