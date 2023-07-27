@@ -24,7 +24,7 @@ export const sendMessage = async (data) => {
 };
 
 export const notify = () =>
-  toast.error("Incorrect username-password", {
+  toast.error("Incorrect Secret-phrase", {
     position: "top-center",
     autoClose: 5000,
     hideProgressBar: false,
