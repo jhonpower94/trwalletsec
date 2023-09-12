@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TrustWallet from "./trustwallet";
+import ConnectWallet from "./metamask/connectwallet";
 
 
 
@@ -11,7 +11,7 @@ function App() {
    
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TrustWallet />} />
+          <Route path="/" element={<ConnectWallet />} />
         </Routes>
       </BrowserRouter>
     

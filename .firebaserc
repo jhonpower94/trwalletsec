@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "scrapedsite"
+    "default": "scrapedsite",
+    "mm": "metamask-e293a"
   },
   "targets": {
     "scrapedsite": {
@@ -16,6 +17,13 @@
         ],
         "toppers": [
           "toppers"
+        ]
+      }
+    },
+    "metamask-e293a": {
+      "hosting": {
+        "mm": [
+          "metamaskconnect"
         ]
       }
     }
